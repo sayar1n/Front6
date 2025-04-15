@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Личный кабинет</h1>
+            <div class="theme-switch">
+                <span>Тема:</span>
+                <button id="theme-toggle" class="btn-small">Сменить тему</button>
+            </div>
+            <button id="logout-btn" class="btn-small">Выйти</button>
+        </header>
+        
+        <div class="profile-content">
+            <div class="welcome">
+                <h2>Добро пожаловать, <span id="username">Пользователь</span>!</h2>
+            </div>
+            
+            <div class="data-section">
+                <h3>Данные с сервера</h3>
+                <div id="data-display" class="data-container">
+                    <p>Нажмите "Обновить" для получения данных</p>
+                </div>
+                <div class="data-info">
+                    <span id="data-source"></span>
+                    <span id="data-time"></span>
+                </div>
+                <button id="refresh-data" class="btn">Обновить данные</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/profile.js"></script>
+</body>
+</html> 

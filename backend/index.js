@@ -10,6 +10,7 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
+
 app.use(cors({
   origin: 'http://localhost:5500',
   credentials: true
@@ -40,7 +41,8 @@ function checkCache(req, res, next) {
   if (fs.existsSync(cacheFile)) {
     const fileStats = fs.statSync(cacheFile);
     const now = new Date();
-    const fileAge = (now - fileStats.mtime) / 1000; 
+    const fileAge = (now - fileStats.mtime) / 1000;
+    
     if (fileAge < 60) {
       const cacheData = JSON.parse(fs.readFileSync(cacheFile, 'utf8'));
       return res.json({ data: cacheData, source: 'cache' });
